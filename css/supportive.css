@@ -1,0 +1,18 @@
+#HelpSupport > div.body div.markdownrenderer .image-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#HelpSupport > div.body div.markdownrenderer .image-header img {
+  height: 1.2em;
+  min-width: 1.2em;
+}
+
+#HelpSupport > div.body div.markdownrenderer p *:not(a, span) {
+  vertical-align: middle;
+}
+
+#HelpSupport > div.body div.markdownrenderer p > img {
+  margin-right: 5px;
+}

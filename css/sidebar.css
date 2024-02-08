@@ -1,0 +1,26 @@
+#HelpSupport > div.body div.sidebar {
+  padding: 18px 15px;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+#HelpSupport > div.body div.sidebar div.article button {
+  width: 100%;
+  text-align: left;
+  padding: 2px 7px;
+  margin: 0;
+  margin-bottom: 2px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#HelpSupport > div.body div.sidebar div.article button.active {
+  font-weight: bold;
+  background-color: var(--accent-transparent);
+}
+
+#HelpSupport > div.body div.sidebar div.article div.indent {
+  padding-left: 15px;
+  margin-bottom: 6px;
+}

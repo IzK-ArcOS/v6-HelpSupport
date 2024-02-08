@@ -1,3 +1,20 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+@import url("./supportive.css");
+@import url("./sidebar.css");
+
+#HelpSupport > div.body {
+  padding: 0;
+}
+
+#HelpSupport > div.body div.markdownrenderer {
+  padding: 15px;
+}
+
+#HelpSupport > div.body div.wrapper {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#HelpSupport > div.body div.wrapper.show {
+  display: block;
 }
