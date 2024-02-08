@@ -149,8 +149,10 @@ export class Runtime extends AppRuntime {
       message: `It seems you've found a glitch in the matrix. It's either that, or you modified the frontend. Regardless, the help article you tried to open doesn't exist.<br/><br/>Tried to open <code>${path}</code>`,
       buttons: [
         {
-          caption: "Close",
-          action: () => { },
+          caption: "Go Home",
+          action: () => {
+            this.handleOpenFile(this.STARTPATH);
+          },
           suggested: true
         }
       ],

@@ -9,7 +9,7 @@
   min-width: 1.2em;
 }
 
-#HelpSupport > div.body div.markdownrenderer p *:not(a, span) {
+#HelpSupport > div.body div.markdownrenderer p *:not(a, span, code, i, b, u) {
   vertical-align: middle;
 }
 
