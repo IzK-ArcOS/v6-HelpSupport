@@ -5,15 +5,30 @@
 }
 
 #HelpSupport > div.body div.markdownrenderer .image-header img {
-  height: 1.2em;
-  min-width: 1.2em;
+  height: 1.2em !important;
+  min-width: 1.2em !important;
 }
 
 #HelpSupport > div.body div.markdownrenderer p *:not(a, span, code, i, b, u) {
   vertical-align: middle;
 }
 
-#HelpSupport > div.body div.markdownrenderer blockquote img[alt*="icon"] {
+#HelpSupport > div.body div.markdownrenderer img[alt*="icon"] {
   height: 20px;
-  margin-right: 8px;
+  margin-right: 5px;
+}
+
+#HelpSupport > div.body div.markdownrenderer img:not([alt*="icon"]) {
+  max-height: 10em;
+  margin: 15px 0;
+  margin-bottom: 0;
+}
+
+#HelpSupport > div.body div.markdownrenderer li {
+  margin-top: 10px;
+}
+
+#HelpSupport > div.body div.markdownrenderer table img[alt*="icon"] {
+  margin: 0 auto !important;
+  display: block;
 }

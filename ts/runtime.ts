@@ -9,6 +9,7 @@ import { sleep } from "$ts/util";
 import { Store } from "$ts/writable";
 import type { App, AppMutator } from "$types/app";
 import { ArcFile } from "$types/fs";
+import { HelpSupportAccelerators } from "./accelerators";
 import { HelpArticleIndex } from "./types";
 
 export class Runtime extends AppRuntime {
@@ -29,6 +30,7 @@ export class Runtime extends AppRuntime {
       await this.readFile(v);
     });
 
+    this.process.accelerator.store.push(...HelpSupportAccelerators(this));
     this._init();
   }
 
@@ -72,7 +74,7 @@ export class Runtime extends AppRuntime {
       this.setAnchorRedirects();
       this.replaceIconSources();
 
-      this.renderArticle.set(true)
+      this.renderArticle.set(true);
     }, 100);
   }
 
@@ -104,7 +106,7 @@ export class Runtime extends AppRuntime {
     const wrapper = this.wrapper.get();
 
     if (!path || !wrapper) {
-      console.log("nononono")
+      console.log("nononono");
       return false;
     }
 
@@ -120,45 +122,54 @@ export class Runtime extends AppRuntime {
         }
       }
 
-      if (src.startsWith("@client")) image.setAttribute("src", src.replace("@client", "."))
+      if (src.startsWith("@client"))
+        image.setAttribute("src", src.replace("@client", "."));
     }
   }
 
   public indexReadError() {
-    createErrorDialog({
-      title: "Load failed!",
-      message: "Help & Support can't find the Index file! Without it, it doesn't know what articles are available. Try restarting ArcOS, if that doesn't work, create a GitHub issue.",
-      buttons: [
-        {
-          caption: "Close",
-          action: () => this.closeApp(),
-          suggested: true
-        }
-      ],
-      image: BadStatusIcon,
-      sound: "arcos.dialog.error"
-    }, this.pid, true);
+    createErrorDialog(
+      {
+        title: "Load failed!",
+        message:
+          "Help & Support can't find the Index file! Without it, it doesn't know what articles are available. Try restarting ArcOS, if that doesn't work, create a GitHub issue.",
+        buttons: [
+          {
+            caption: "Close",
+            action: () => this.closeApp(),
+            suggested: true,
+          },
+        ],
+        image: BadStatusIcon,
+        sound: "arcos.dialog.error",
+      },
+      this.pid,
+      true
+    );
 
     return false;
   }
 
-
   public articleReadError(path = this.path.get()) {
-    createErrorDialog({
-      title: "Wisdom out of reach!",
-      message: `It seems you've found a glitch in the matrix. It's either that, or you modified the frontend. Regardless, the help article you tried to open doesn't exist.<br/><br/>Tried to open <code>${path}</code>`,
-      buttons: [
-        {
-          caption: "Go Home",
-          action: () => {
-            this.handleOpenFile(this.STARTPATH);
+    createErrorDialog(
+      {
+        title: "Wisdom out of reach!",
+        message: `It seems you've found a glitch in the matrix. It's either that, or you modified the frontend. Regardless, the help article you tried to open doesn't exist.<br/><br/>Tried to open <code>${path}</code>`,
+        buttons: [
+          {
+            caption: "Go Home",
+            action: () => {
+              this.handleOpenFile(this.STARTPATH);
+            },
+            suggested: true,
           },
-          suggested: true
-        }
-      ],
-      image: BadStatusIcon,
-      sound: "arcos.dialog.error"
-    }, this.pid, true);
+        ],
+        image: BadStatusIcon,
+        sound: "arcos.dialog.error",
+      },
+      this.pid,
+      true
+    );
 
     return false;
   }
