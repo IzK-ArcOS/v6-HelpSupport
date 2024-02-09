@@ -9,7 +9,11 @@
   min-width: 1.2em !important;
 }
 
-#HelpSupport > div.body div.markdownrenderer p *:not(a, span, code, i, b, u) {
+#HelpSupport
+  > div.body
+  div.markdownrenderer
+  p
+  *:not(a, span, code, i, b, u, strong) {
   vertical-align: middle;
 }
 
@@ -22,6 +26,13 @@
   max-height: 10em;
   margin: 15px 0;
   margin-bottom: 0;
+}
+
+#HelpSupport > div.body div.markdownrenderer img[alt*="large"] {
+  max-height: 30em;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px 0 #0004;
 }
 
 #HelpSupport > div.body div.markdownrenderer li {
