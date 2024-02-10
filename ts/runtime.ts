@@ -36,8 +36,15 @@ export class Runtime extends AppRuntime {
 
   private async _init() {
     await this.readIndex();
+    const args = this.process.args;
 
-    this.handleOpenFile(this.STARTPATH);
+    this.handleOpenFile(!args.length || typeof args[0] != "string" ? this.STARTPATH : args[0]);
+
+    this.process.handler.dispatch.subscribe<string>(this.process.pid, "change-article", (page) => {
+      this.handleOpenFile(page);
+    });
+
+    this.process.handler.dispatch.dispatchToPid(this.pid, "snapping-set", "right")
   }
 
   async readIndex() {
