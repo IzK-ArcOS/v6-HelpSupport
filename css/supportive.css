@@ -43,3 +43,19 @@
   margin: 0 auto !important;
   display: block;
 }
+
+#HelpSupport
+  > div.body
+  div.markdownrenderer
+  blockquote
+  *:not(a, span, code, i, b, u, strong) {
+  vertical-align: middle;
+}
+
+#HelpSupport > div.body div.markdownrenderer blockquote h1,
+#HelpSupport > div.body div.markdownrenderer blockquote h2,
+#HelpSupport > div.body div.markdownrenderer blockquote h3,
+#HelpSupport > div.body div.markdownrenderer blockquote h4,
+#HelpSupport > div.body div.markdownrenderer blockquote h5 {
+  margin-bottom: 10px;
+}
