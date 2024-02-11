@@ -16,7 +16,7 @@
     <Pane minSize={60}>
       <Renderer {runtime} />
     </Pane>
-    <Pane minSize={25} size={25}>
+    <Pane minSize={30} size={40}>
       <Sidebar {runtime} />
     </Pane>
   </Splitpanes>

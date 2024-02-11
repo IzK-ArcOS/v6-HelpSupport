@@ -1,5 +1,5 @@
 #HelpSupport > div.body div.sidebar {
-  padding: 18px 15px;
+  padding: 15px;
   height: 100%;
   overflow-y: scroll;
   padding-right: 10px;
@@ -8,19 +8,60 @@
 #HelpSupport > div.body div.sidebar div.article button {
   width: 100%;
   text-align: left;
-  padding: 2px 7px;
+  padding: 5px;
   margin: 0;
   margin-bottom: 2px;
   background-color: transparent;
   box-shadow: none;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: unset;
+}
+
+#HelpSupport > div.body div.sidebar div.article button img {
+  height: 16px;
+  min-width: 16px;
+}
+
+#HelpSupport > div.body div.sidebar div.article button span {
+  width: calc(100% - 40px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #HelpSupport > div.body div.sidebar div.article button.active {
-  font-weight: bold;
   background-color: var(--accent-transparent);
 }
 
+#HelpSupport > div.body div.sidebar div.article button.subitems::after {
+  content: "chevron_right";
+  font-family: "Material Icons Round";
+  font-size: 16px;
+  opacity: 0.5;
+  margin-left: auto;
+}
+
+#HelpSupport > div.body div.sidebar div.article button.subitems.active::after,
+#HelpSupport
+  > div.body
+  div.sidebar
+  div.article:has(.active)
+  > button.subitems::after {
+  rotate: 90deg;
+}
+
 #HelpSupport > div.body div.sidebar div.article div.indent {
-  padding-left: 15px;
+  padding-left: 10px;
+  margin-left: 12px;
   margin-bottom: 6px;
+  display: none;
+  border-left: var(--button-hover-bg) 1px solid;
+}
+
+#HelpSupport > div.body div.sidebar div.article div.indent.show,
+#HelpSupport > div.body div.sidebar div.article div.indent:has(.active) {
+  display: block;
 }
