@@ -35,6 +35,17 @@
   box-shadow: 0 4px 7px 0 #0004;
 }
 
+#HelpSupport > div.body div.markdownrenderer img[alt*="medium"] {
+  max-height: 15em;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 #0003;
+}
+
+#HelpSupport > div.body div.markdownrenderer td img:not([alt*="icon"]) {
+  margin: 5px 0;
+}
+
 #HelpSupport > div.body div.markdownrenderer li {
   margin-top: 10px;
 }
