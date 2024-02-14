@@ -23,17 +23,11 @@
     const icons = getAllImages();
 
     icon = icons[article.icon] || BookIcon;
-
-    console.log(icons, article.icon);
   });
 </script>
 
 <div class="article">
-  <button
-    on:click={trigger}
-    class:active={$path == article.path}
-    class:subitems={!!article.subitems}
-  >
+  <button on:click={trigger} class:active={$path == article.path} class:subitems={!!article.subitems}>
     <img src={icon} alt="" />
     <span>{article.name}</span>
   </button>

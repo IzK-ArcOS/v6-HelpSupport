@@ -113,7 +113,6 @@ export class Runtime extends AppRuntime {
     const wrapper = this.wrapper.get();
 
     if (!path || !wrapper) {
-      console.log("nononono");
       return false;
     }
 
