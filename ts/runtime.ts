@@ -44,7 +44,7 @@ export class Runtime extends AppRuntime {
       this.handleOpenFile(page);
     });
 
-    this.process.handler.dispatch.dispatchToPid(this.pid, "snapping-set", "right")
+    this.process.handler.dispatch.dispatchToPid(this.pid, "snapping-set", "right");
   }
 
   async readIndex() {
@@ -128,8 +128,7 @@ export class Runtime extends AppRuntime {
         }
       }
 
-      if (src.startsWith("@client"))
-        image.setAttribute("src", src.replace("@client", "."));
+      if (src.startsWith("@client")) image.setAttribute("src", src.replace("@client", "."));
     }
   }
 

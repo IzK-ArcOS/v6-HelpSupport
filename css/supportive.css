@@ -9,11 +9,7 @@
   min-width: 1.2em !important;
 }
 
-#HelpSupport
-  > div.body
-  div.markdownrenderer
-  p
-  *:not(a, span, code, i, b, u, strong) {
+#HelpSupport > div.body div.markdownrenderer p *:not(a, span, code, i, b, u, strong) {
   vertical-align: middle;
 }
 
@@ -62,11 +58,7 @@
   display: block;
 }
 
-#HelpSupport
-  > div.body
-  div.markdownrenderer
-  blockquote
-  *:not(a, span, code, i, b, u, strong) {
+#HelpSupport > div.body div.markdownrenderer blockquote *:not(a, span, code, i, b, u, strong) {
   vertical-align: middle;
 }
 

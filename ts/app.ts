@@ -10,7 +10,7 @@ export const HelpSupport: App = {
     author: "The ArcOS Team",
     version: "1.0.5",
     icon: QuestionIcon,
-    appGroup: "support"
+    appGroup: "support",
   },
   runtime: Runtime,
   content: AppSvelte,
@@ -24,12 +24,12 @@ export const HelpSupport: App = {
     maximized: false,
     headless: false,
     fullscreen: false,
-    resizable: true
+    resizable: true,
   },
   controls: {
     minimize: true,
     maximize: true,
-    close: true
+    close: true,
   },
-  singleInstance: true
+  singleInstance: true,
 };

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Runtime } from "$apps/HelpSupport/ts/runtime";
   import { HelpArticle } from "$apps/HelpSupport/ts/types";
+  import { getAllImages } from "$ts/images";
   import { BookIcon } from "$ts/images/general";
   import { onMount } from "svelte";
   import Article from "./Article.svelte";
-  import { getAllImages } from "$ts/images";
 
   export let article: HelpArticle;
   export let runtime: Runtime;
@@ -27,7 +27,11 @@
 </script>
 
 <div class="article">
-  <button on:click={trigger} class:active={$path == article.path} class:subitems={!!article.subitems}>
+  <button
+    on:click={trigger}
+    class:active={$path == article.path}
+    class:subitems={!!article.subitems}
+  >
     <img src={icon} alt="" />
     <span>{article.name}</span>
   </button>

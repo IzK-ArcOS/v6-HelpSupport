@@ -2,9 +2,7 @@ import { sleep } from "$ts/util";
 import { AppKeyCombinations } from "$types/accelerator";
 import { Runtime } from "./runtime";
 
-export const HelpSupportAccelerators: (
-  runtime: Runtime
-) => AppKeyCombinations = (runtime) => {
+export const HelpSupportAccelerators: (runtime: Runtime) => AppKeyCombinations = (runtime) => {
   return [
     {
       key: "r",

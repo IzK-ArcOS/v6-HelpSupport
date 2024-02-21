@@ -45,11 +45,7 @@
 }
 
 #HelpSupport > div.body div.sidebar div.article button.subitems.active::after,
-#HelpSupport
-  > div.body
-  div.sidebar
-  div.article:has(.active)
-  > button.subitems::after {
+#HelpSupport > div.body div.sidebar div.article:has(.active) > button.subitems::after {
   rotate: 90deg;
 }
 
