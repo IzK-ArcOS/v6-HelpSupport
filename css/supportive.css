@@ -27,21 +27,21 @@
 #HelpSupport > div.body div.markdownrenderer img[alt*="large"] {
   max-height: 30em;
   display: block;
-  border-radius: 10px;
+  border-radius: var(--win-border-rad);
   box-shadow: 0 4px 7px 0 #0004;
 }
 
 #HelpSupport > div.body div.markdownrenderer img[alt*="medium"] {
   max-height: 15em;
   display: block;
-  border-radius: 6px;
+  border-radius: var(--button-border-rad);
   box-shadow: 0 2px 5px 0 #0003;
 }
 
 #HelpSupport > div.body div.markdownrenderer img[alt*="small"] {
   max-height: 3.5em;
   display: block;
-  border-radius: 6px;
+  border-radius: var(--button-border-rad);
   box-shadow: 0 2px 5px 0 #0003;
 }
 

@@ -7,6 +7,10 @@
 
 #HelpSupport > div.body div.markdownrenderer {
   padding: 15px;
+  user-select: all !important;
+}
+#HelpSupport > div.body div.markdownrenderer * {
+  user-select: initial !important;
 }
 
 #HelpSupport > div.body div.wrapper {
